@@ -544,7 +544,7 @@ function handleServiceRequest(serviceName) {
         documents = ["દસ્તાવેજોની માહિતી ઉપલબ્ધ નથી."];
     }
 
-    const message = `📌 *${serviceName}* માટે અરજી કરવાની ઇચ્છા છે.\n\n📝 જરૂરી દસ્તાવેજો:\n${documents.map((doc, i) => `${i + 1}. ${doc}`).join('\n')}\n\n📍Pragalbh Associates\n📞 9898329056`;
+    const message = `📌 *${serviceName}* માટે અરજી કરવી છે.\n\n📝 જરૂરી દસ્તાવેજો:\n${documents.map((doc, i) => `${i + 1}. ${doc}`).join('\n')}\n\n📍Pragalbh Associates\n📞 9898329056`;
 
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
