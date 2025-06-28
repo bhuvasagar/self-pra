@@ -48,7 +48,7 @@ function showSlide(index) {
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
     
-    // Remove active class from all slides and indicators
+    // Remove active class from all slides and indicator
     slides.forEach(slide => slide.classList.remove('active'));
     indicators.forEach(indicator => indicator.classList.remove('active'));
     
@@ -171,7 +171,7 @@ const documentRequirements = {
        "રેશન કાર્ડ",
        "લાઇટબીલ",
        "વેરાબીલ",
-],
+    ],
 
 "બિનઅનામત વર્ગના દાખલા માટેના પુરાવા ની યાદી": [
 
@@ -182,7 +182,7 @@ const documentRequirements = {
 	"રેશન કાર્ડ",
 	"લાઇટબીલ",
 	"વેરાબીલ",
-],
+    ],
    
 "ડોમીસાઈલ સર્ટી માટેના પુરાવા ની યાદી": [
 
@@ -199,7 +199,7 @@ const documentRequirements = {
 	"પોલીસ સ્ટેશન નો દાખલો",
 	"તલાટીશ્રી નો ૧૦ વર્ષ નો રહેણાક નો દાખલો",
 	"સોગંદનામું",
-],
+   ],
  
 "ફૂડ લાયસન્સ માટેના પુરાવા ની યાદી": [
 
@@ -214,7 +214,7 @@ const documentRequirements = {
 	" મોબાઈલ નંબર",
 	"ઈ મેઈલ ID  ",
        "ધંધા ના સ્થળ ના ફોટા મશીનરી સાથે ના",
-],
+   ],
      
 "I.T.R ઇન્કમટેક્ષ રિટર્ન માટેના પુરાવા ની યાદી": [
 
@@ -231,7 +231,7 @@ const documentRequirements = {
 	 	"ખેતી વાળી ના ખરીદ વેચાણ ના બીલ ખેતી ની આવક હોય તો",
 	 	"નોકરી કરતા હોય તેવામાં ફોર્મ – ૧૬",
 	 	"ધંધા ની આવક હોય તો ખરીદ/વેચાણ તથા ખર્ચ ના બીલ",
-],
+   ],
    
 "જાતિના દાખલા માટેના પુરાવા ની યાદી": [
 
