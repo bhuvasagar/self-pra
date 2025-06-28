@@ -143,7 +143,8 @@ const servicesData = [
             { name: "પાન કાર્ડ - નવું અને સુધારણા", nameEn: "Pan Card -New and Correction", description: "પાન કાર્ડ - નવું અને સુધારણા સેવાઓ" },
             { name: "ભાડા કરાર", nameEn: "Rent Agreement", description: "ભાડા કરાર સેવાઓ" },
             { name: "રેશન કાર્ડ", nameEn: "Ration Card", description: "રેશન કાર્ડ અરજી અને સેવાઓ" },
-        ]
+	    { name: "ભાગીદારી દસ્તાવેજ", nameEn: "PARTNARSHIP DEED", description: "ભાગીદારી દસ્તાવેજ" },
+	            ]
     }
 ];
 
