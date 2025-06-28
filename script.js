@@ -102,8 +102,8 @@ const servicesData = [
             { name: "મૃત્યુ દાખલો", nameEn: "Death Certificate", description: "મૃત્યુના પુરાવા માટે" },
             { name: "બિન અનામત દાખલા", nameEn: "Non-reserved instance", description: "બિન અનામત દાખલા માટે" },
             { name: "૧૦% (E.W.S.)અનામત વગના દાખલા", nameEn: "10% (E.W.S.) Reservation Scheme Example", description: "૧૦% (E.W.S.)અનામત વગના દાખલા માટે" },
-            { name: "ડોમીસાઈલ સટી", nameEn: "Domicile Certificate", description: "ડોમીસાઈલ સટી માટે" },
-            { name: "નોન ક્રિમીલેયર સટી", nameEn: "Non-creamy layer Certificate", description: "નોન ક્રિમીલેયર સટી માટે" },
+            { name: "ડોમીસાઈલ સર્ટી", nameEn: "Domicile Certificate", description: "ડોમીસાઈલ સર્ટી માટે" },
+            { name: "નોન ક્રિમીલેયર સર્ટી", nameEn: "Non-creamy layer Certificate", description: "નોન ક્રિમીલેયર સર્ટી માટે" },
             { name: "સીનીયર સીટીઝન પ્રમાણપત્ર ", nameEn: "Senior Citizen Certificate", description: "સીનીયર સીટીઝન પ્રમાણપત્ર માટે" },
             { name: "વિચરતી-વિમુક્ત જાતિ દાખલો ", nameEn: "NT-DNT Certificate", description: "વિચરતી-વિમુક્ત જાતિ દાખલો માટે" },
         ]
@@ -196,7 +196,7 @@ const documentRequirements = {
         "બિન અનામત વતનનો દાખલો",
         "ખેતીની આવક હોય તો 7/12/8આ પિતાનું"
     ],
-    "ડોમીસાઈલ સટી": [
+    "ડોમીસાઈલ સર્ટી": [
         "અરજદાર અને પિતાનો ફોટો",
         "આધાર કાર્ડ અને ચૂંટણી કાર્ડ",
         "અરજદારનું વતનની સર્ટિ. અથવા બોનાફાઇડ",
@@ -207,16 +207,16 @@ const documentRequirements = {
         "લાઇટ બિલ",
         "વેરાબીલ",
         "પોલીસ સ્ટેશનનો દાખલો",
-        "તલાટીની રહેઠાણની સર્ટિ. (10 વર્ષ)",
+        "તલાટીની રહેઠાણની સર્ટી. (10 વર્ષ)",
         "સોગંદનામું"
     ],
-    "નોન ક્રિમીલેયર સટી": [
+    "નોન ક્રિમીલેયર સર્ટી": [
         "અરજદારનો ફોટો",
         "પિતાનો આધાર કાર્ડ",
         "જાતિનો દાખલો",
         "આવકના પ્રમાણપત્ર (3 વર્ષ)",
         "રેશન કાર્ડ",
-        "વતનની સર્ટિ.",
+        "વતનની સર્ટી.",
         "લાઈટ બિલ",
         "ચૂંટણી કાર્ડ"
     ],
