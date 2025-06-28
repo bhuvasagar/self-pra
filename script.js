@@ -139,7 +139,7 @@ const servicesData = [
         description: "તમામ પ્રકારના સરકારી અન્ય મેળવો",
         icon: "settings",
         subServices: [
-            { name: "લાઇટ કનેક્શન", nameEn: "Light connection", description: "પાસપોર્ટ અરજી અને સેવાઓ" },
+            { name: "લાઇટ કનેક્શન", nameEn: "Light connection", description: "લાઇટ કનેક્શન" },
             { name: "પાન કાર્ડ - નવું અને સુધારણા", nameEn: "Pan Card -New and Correction", description: "પાન કાર્ડ - નવું અને સુધારણા સેવાઓ" },
             { name: "ભાડા કરાર", nameEn: "Rent Agreement", description: "ભાડા કરાર સેવાઓ" },
             { name: "રેશન કાર્ડ", nameEn: "Ration Card", description: "રેશન કાર્ડ અરજી અને સેવાઓ" },
