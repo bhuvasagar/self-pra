@@ -114,10 +114,10 @@ const servicesData = [
         description: "સહાય સંબંધિત તમામ સેવાઓ",
         icon: "credit-card",
         subServices: [
-            { name: "વિધવા સહાય માટે", nameEn: "For widow assistance", description: "વિધવા સહાય માટે અરજી" },
-            { name: "વ્રુધ્ધ પેન્સન માટે", nameEn: "pension assistance", description: "વ્રુધ્ધ સહાય માટે અરજી" },
-            { name: "વ્હાલી દીકરી સહાય", nameEn: "Dear Daughter", description: "વ્હાલી દીકરી સહાય માટે અરજી" },
-            { name: "કુવરબાઈ મામેરુ સહાય", nameEn: "Kuvarbai Mameru", description: "કુવરબાઈ મામેરુ સહાય માટે અરજી" },
+            { name: "વિધવા સહાય માટે", nameEn: "For widow assistance", description: "વિધવા સહાય માટે" },
+            { name: "વ્રુધ્ધ પેન્સન માટે", nameEn: "pension assistance", description: "વ્રુધ્ધ સહાય માટે" },
+            { name: "વ્હાલી દીકરી સહાય", nameEn: "Dear Daughter", description: "વ્હાલી દીકરી સહાય માટે" },
+            { name: "કુવરબાઈ મામેરુ સહાય", nameEn: "Kuvarbai Mameru", description: "કુવરબાઈ મામેરુ સહાય માટે" },
         ]
     },
     {
