@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="gu">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Praglbh Association - Government Document Services</title>
-    <link rel="website icon" type="png" href="Pragalbh-logo.png" style="border-radius: 19px;">
+  <link rel="website icon" type="png" href="Pragalbh-logo.png" style="border-radius: 19px;">
   <link rel="stylesheet" href="styles.css" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
   <!-- Navigation -->
   <nav class="navbar">
@@ -17,9 +22,9 @@
         <p>Government Document Services</p>
       </div>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#home" onclick="showPage('home')">Home</a></li>
-        <li><a href="#services" onclick="showPage('services')">Services</a></li>
-        <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+        <li><a href="index.html" onclick="showPage('home')">Home</a></li>
+        <li><a href="service.html" onclick="showPage('services')">Services</a></li>
+        <li><a href="contact.html" onclick="showPage('contact')">Contact</a></li>
         <li><a href="#" onclick="openWhatsApp()">Apply Now</a></li>
       </ul>
       <div class="hamburger" id="hamburger">
@@ -28,90 +33,106 @@
     </div>
   </nav>
 
- <!-- Hero Slider -->
-        <div class="hero-slider">
-            
-            <div class="slide active">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
-                <div class="slide-overlay"></div>
-                <div class="slide-content">
-                    <h2>તમારા દરેક સરકારી કામ માટે એક જ સ્થળ</h2>
-                    <p>Pragalbh Associates સાથે મળો તમામ સરકારી સેવાઓ</p>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
-                <div class="slide-overlay"></div>
-                <div class="slide-content">
-                    <h2>ડોક્યુમેન્ટ ચેકલિસ્ટ માટે ઓનલાઇન અરજી કરો</h2>
-                    <p>ઝડપી અને સરળ પ્રક્રિયા</p>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
-                <div class="slide-overlay"></div>
-                <div class="slide-content">
-                    <h2>દાખલા, સહાય અને વધુ ઘણી સેવાઓ ઉપલબ્ધ</h2>
-                    <p>વિશ્વસનીય અને કાર્યક્ષમ સેવા</p>
-                </div>
-            </div>
-            
-            <!-- Navigation arrows -->
-            <!-- <button class="nav-arrow nav-prev" onclick="previousSlide()">
+  <!-- Hero Slider -->
+  <div class="hero-slider">
+
+    <div class="slide active">
+      <div class="slide-bg"
+        style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+      </div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h2>તમારા દરેક સરકારી કામ માટે એક જ સ્થળ</h2>
+        <p>Pragalbh Associates સાથે મળો તમામ સરકારી સેવાઓ</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg"
+        style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+      </div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h2>ડોક્યુમેન્ટ ચેકલિસ્ટ માટે ઓનલાઇન અરજી કરો</h2>
+        <p>ઝડપી અને સરળ પ્રક્રિયા</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg"
+        style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+      </div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h2>દાખલા, સહાય અને વધુ ઘણી સેવાઓ ઉપલબ્ધ</h2>
+        <p>વિશ્વસનીય અને કાર્યક્ષમ સેવા</p>
+      </div>
+    </div>
+
+    <!-- Navigation arrows -->
+    <!-- <button class="nav-arrow nav-prev" onclick="previousSlide()">
                 <i class="fas fa-chevron-left"></i>
             </button>
             <button class="nav-arrow nav-next" onclick="nextSlide()">
                 <i class="fas fa-chevron-right"></i>
             </button> -->
-            
-            <!-- Slide indicators -->
-            <div class="slide-indicators">
-                <button class="indicator active" onclick="currentSlide(1)"></button>
-                <button class="indicator" onclick="currentSlide(2)"></button>
-                <button class="indicator" onclick="currentSlide(3)"></button>
-            </div>
-        </div>
-        
 
-   <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">About Praglbh Association</h2>
-                    <div class="about-description">
-                        <p>Praglbh Association is a trusted organization that helps citizens with their government
-                            documents and various online form submissions.</p>
-                        <p>Our mission is to provide ease and speed to every citizen in obtaining their necessary
-                            documents. We provide quality service with an experienced team.</p>
-                        <p>We have 8+ years of experience and have successfully helped 10000+ people obtain their
-                            documents.</p>
-                    </div>
-                    <div class="about-stats">
-                        <div class="about-stat-card">
-                            <div class="stat-icon">👥</div>
-                            <div class="stat-number">10000+</div>
-                            <div class="stat-label">Happy Clients</div>
-                        </div>
-                        <div class="about-stat-card">
-                            <div class="stat-icon">📅</div>
-                            <div class="stat-number">8+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-        </div>
-    </section>
-
-<section class="features">
-      <div class="container">
-        <h3>સેવાઓ જુઓ</h3>
-        <div id="home-services-grid" class="features-grid"></div>
-      </div>
-    </section>
+    <!-- Slide indicators -->
+    <div class="slide-indicators">
+      <button class="indicator active" onclick="currentSlide(1)"></button>
+      <button class="indicator" onclick="currentSlide(2)"></button>
+      <button class="indicator" onclick="currentSlide(3)"></button>
+    </div>
   </div>
-    
+
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title">About Praglbh Associates</h2>
+          <div class="about-description">
+            <p>Praglbh Association is a trusted organization that helps citizens with their government
+              documents and various online form submissions.</p>
+            <p>Our mission is to provide ease and speed to every citizen in obtaining their necessary
+              documents. We provide quality service with an experienced team.</p>
+            <p>We have 8+ years of experience and have successfully helped 10000+ people obtain their
+              documents.</p>
+          </div>
+          <div class="about-stats">
+            <div class="about-stat-card">
+              <div class="stat-icon">👥</div>
+              <div class="stat-number">10000+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="about-stat-card">
+              <div class="stat-icon">📅</div>
+              <div class="stat-number">8+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="about-stat-card">
+              <div class="stat-icon">✉️</div>
+              <div class="stat-number">WhatsApp Support</div>
+              <div class="stat-label">Always here to help</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&h=400"
+            alt="Team working" class="about-img">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="features">
+    <div class="container">
+      <h3>સેવાઓ જુઓ</h3>
+      <div id="home-services-grid" class="features-grid"></div>
+    </div>
+  </section>
+  </div>
 
   <!-- Services Page -->
   <div id="services" class="page">
@@ -120,89 +141,87 @@
       <p class="page-description">હેતુલક્ષી રીતે શ્રેણીબદ્ધ સેવાઓ</p>
       <div id="services-grid" class="features-grid"></div>
     </div>
-    
+
   </div>
 
   <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Customer Experiences</h2>
-                <p class="section-description">What our happy customers say</p>
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Customer Experiences</h2>
+        <p class="section-description">What our happy customers say</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"Praglbh Association provided very easy and fast service for my income
+            certificate. It was a very satisfying experience."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div class="author-info">
+              <div class="author-name">Ramesh Patel</div>
+              <div class="author-location">Ahmedabad</div>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="testimonial-text">"Praglbh Association provided very easy and fast service for my income
-                        certificate. It was a very satisfying experience."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">R</div>
-                        <div class="author-info">
-                            <div class="author-name">Ramesh Patel</div>
-                            <div class="author-location">Ahmedabad</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="testimonial-text">"Applied for caste certificate. The entire process was explained clearly
-                        and work was completed on time."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">S</div>
-                        <div class="author-info">
-                            <div class="author-name">Sunita Sharma</div>
-                            <div class="author-location">Surat</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="testimonial-text">"Got help for ration card. Very good service on WhatsApp. All documents
-                        were prepared correctly."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <div class="author-name">Anil Yadav</div>
-                            <div class="author-location">Vadodara</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"Applied for caste certificate. The entire process was explained clearly
+            and work was completed on time."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div class="author-info">
+              <div class="author-name">Sunita Sharma</div>
+              <div class="author-location">Surat</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"Got help for ration card. Very good service on WhatsApp. All documents
+            were prepared correctly."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div class="author-info">
+              <div class="author-name">Anil Yadav</div>
+              <div class="author-location">Vadodara</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact Page -->
-  <div id="contact" class="page">
-    <div class="container contact-content">
-      <div class="contact-info">
-        <div class="contact-item"><i data-lucide="phone"></i> 9898329056</div>
-        <div class="contact-item"><i data-lucide="mail"></i> pragalbhxerox@gmail.com</div>
-      </div>
-      <form class="contact-form" onsubmit="submitContactForm(event)">
-        <input type="text" name="name" placeholder="તમારું નામ" required />
-        <input type="tel" name="phone" placeholder="ફોન નંબર" required />
-        <textarea name="message" rows="4" placeholder="તમારો સંદેશ લખો..." required></textarea>
-        <button type="submit">મોકલો</button>
-      </form>
+  <div class="container contact-content ">
+    <div class="contact-info">
+      <div class="contact-item"><i data-lucide="phone"></i> 9898329056</div>
+      <div class="contact-item"><i data-lucide="mail"></i> pragalbhxerox@gmail.com</div>
     </div>
+    <form class="contact-form" onsubmit="submitContactForm(event)">
+      <input type="text" name="name" placeholder="તમારું નામ" required />
+      <input type="tel" name="phone" placeholder="ફોન નંબર" required />
+      <textarea name="message" rows="4" placeholder="તમારો સંદેશ લખો..." required></textarea>
+      <button type="submit">મોકલો</button>
+    </form>
   </div>
 
   <!-- WhatsApp Floating Button -->
@@ -214,17 +233,27 @@
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-section">
-        <h4>Pragalbh Associates</h4>
+        <h2 style="padding-bottom: 1.2rem;">Pragalbh Associates</h2>
         <ul>
-          <p>OFFICE NO.6 <span> OPP TALUKA SEVA SADAN</span> <br> JUNAGADH ROAD, JETPUR 360370</p>
-         
+          <p><i class="fa-solid fa-location-dot"></i> OFFICE NO.6 <span> OPP TALUKA SEVA SADAN</span> <br> JUNAGADH ROAD, JETPUR 360370</p>
+
         </ul>
       </div>
       <div class="footer-section">
         <h4>સંપર્ક કરો</h4>
         <ul>
-          <li>મો.9898329056</li>
-          <li>pragalbhxerox@gmail.com</li>
+          <li><a href="tel:+91 9898329056"></a> મો.+91 9898329056</li>
+          <li> <a href="mailto:pragalbhxerox@gmail.com"></a>
+            pragalbhxerox@gmail.com</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <ul class="social-icons">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fab fa-google"></i></a></li>
         </ul>
       </div>
     </div>
@@ -234,4 +263,5 @@
   <!-- Script -->
   <script src="script.js"></script>
 </body>
+
 </html>
