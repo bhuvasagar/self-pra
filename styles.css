@@ -75,6 +75,8 @@ body {
 
 .nav-menu a:hover {
     color: var(--primary-blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .hamburger {
@@ -866,7 +868,7 @@ body {
 }
 
 .footer-section h4 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: var(--white);
 }
 
@@ -886,6 +888,24 @@ body {
     color: #9ca3af;
 }
 
+.social-icons {
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons li {
+    list-style: none;
+}
+
+.social-icons a {
+    color: #d1d5db;
+    font-size: 1.6rem;
+    transition: color 0.3s;
+    text-decoration: none;
+    
+}
 /* Page Titles */
 .page h2 {
     text-align: center;
