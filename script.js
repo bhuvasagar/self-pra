@@ -4,15 +4,10 @@ let slideInterval;
 let userRegistered = false;
 
 // Initialize the application
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     initializeSlider();
     checkUserRegistration();
     setupEventListeners();
-    lucide.createIcons();
-    setupNavigation();
-    renderServices();
-    showPage('home');
-    checkUserAccessSource(); // ✅ NEW
 });
 
 // Hero Slider Functions
@@ -20,13 +15,16 @@ function initializeSlider() {
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
 
+    // Start auto-sliding
     slideInterval = setInterval(nextSlide, 5000);
 
+    // Reset interval on manual navigation
     function resetInterval() {
         clearInterval(slideInterval);
         slideInterval = setInterval(nextSlide, 5000);
     }
 
+    // Add click events to navigation arrows
     document.querySelector('.nav-prev').addEventListener('click', () => {
         previousSlide();
         resetInterval();
@@ -37,6 +35,7 @@ function initializeSlider() {
         resetInterval();
     });
 
+    // Add click events to indicators
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
             currentSlide(index + 1);
@@ -49,9 +48,11 @@ function showSlide(index) {
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
 
+    // Remove active class from all slides and indicators
     slides.forEach(slide => slide.classList.remove('active'));
     indicators.forEach(indicator => indicator.classList.remove('active'));
 
+    // Add active class to current slide and indicator
     slides[index].classList.add('active');
     indicators[index].classList.add('active');
 }
@@ -80,6 +81,7 @@ function checkUserRegistration() {
         userRegistered = true;
         showServices();
     } else {
+        // Show registration prompt after 2 seconds
         setTimeout(() => {
             if (!userRegistered) {
                 showModal();
@@ -88,120 +90,43 @@ function checkUserRegistration() {
     }
 }
 
-// ✅ NEW FUNCTION: Hide services if user didn't come via Apply button
-function checkUserAccessSource() {
-    const cameFromApp = localStorage.getItem('enteredFromApp');
-
-    if (!cameFromApp) {
-        const servicesPage = document.getElementById('services-grid');
-        const homePage = document.getElementById('home-services-grid');
-
-        if (servicesPage)
-            servicesPage.innerHTML = '<p style="text-align:center;">માફ કરો, આપ પ્રમાણિત ઉપયોગકર્તા નથી.</p>';
-
-        if (homePage)
-            homePage.innerHTML = '<p style="text-align:center;">માફ કરો, સેવાઓ જોવા માટે અધિકૃત રીતે પ્રવેશ કરો.</p>';
-    }
-}
-
-// ✅ Clear flag on page close/reload
-window.addEventListener('beforeunload', () => {
-    localStorage.removeItem('enteredFromApp');
-});
-
-function setupNavigation() {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    hamburger.addEventListener('click', function () {
-        navMenu.classList.toggle('active');
-    });
-    navMenu.addEventListener('click', function () {
-        navMenu.classList.remove('active');
-    });
-}
-
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-    const targetPage = document.getElementById(pageId);
-    if (targetPage) targetPage.classList.add('active');
-    window.location.hash = pageId;
-}
-
-function renderServices() {
-    const servicesGrid = document.getElementById('services-grid');
-    const homeServicesGrid = document.getElementById('home-services-grid');
-
-    servicesData.forEach((service, index) => {
-        const serviceCard = createServiceCard(service, index);
-        servicesGrid.appendChild(serviceCard);
-
-        if (homeServicesGrid) {
-            const clonedCard = serviceCard.cloneNode(true);
-            clonedCard.querySelector('.service-header').setAttribute('onclick', `toggleService(${index})`);
-            clonedCard.querySelectorAll('.apply-button').forEach((btn, i) => {
-                btn.setAttribute('onclick', `handleServiceRequest('${service.subServices[i].name}')`);
-            });
-            homeServicesGrid.appendChild(clonedCard);
-        }
-    });
-    lucide.createIcons();
-}
-
-function createServiceCard(service, index) {
-    const card = document.createElement('div');
-    card.className = 'service-card';
-    card.id = `service-${index}`;
-    card.innerHTML = `
-        <div class="service-header" onclick="toggleService(${index})">
-            <div class="service-header-content">
-                <div class="service-info">
-                    <div class="service-icon">
-                        <i data-lucide="${service.icon}"></i>
-                    </div>
-                    <div class="service-title">
-                        <h3>${service.title}</h3>
-                        <p>${service.titleEn}</p>
-                    </div>
-                </div>
-                <i data-lucide="chevron-down" class="chevron"></i>
+// Form Popup + Submission Logic
+function showRequestForm(serviceName) {
+    const formHtml = `
+        <div class="form-overlay" id="form-overlay">
+            <div class="form-popup">
+                <h3>${serviceName} માટે અરજી કરો</h3>
+                <form id="userRequestForm">
+                    <label for="username">નામ:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="usernumber">WhatsApp નંબર:</label>
+                    <input type="tel" id="usernumber" name="usernumber" required pattern="[0-9]{10}" placeholder="10 અંક દાખલ કરો">
+                    <button type="submit">મોકલો</button>
+                    <button type="button" onclick="closeRequestForm()">બંધ કરો</button>
+                </form>
             </div>
-            <div class="service-description">${service.description}</div>
-        </div>
-        <div class="service-content">
-            <h4 class="sub-services-title">ઉપલબ્ધ સેવાઓ:</h4>
-            ${service.subServices.map(subService => `
-                <div class="sub-service-item">
-                    <div class="sub-service-info">
-                        <h4>${subService.name}</h4>
-                        <p>${subService.nameEn}</p>
-                        <span>${subService.description}</span>
-                    </div>
-                    <button class="apply-button" onclick="handleServiceRequest('${subService.name}')">
-                        અરજી કરો
-                    </button>
-                </div>
-            `).join('')}
-        </div>
-    `;
-    return card;
-}
+        </div>`;
 
-function toggleService(index) {
-    const allCards = document.querySelectorAll('.service-card');
-    allCards.forEach((card, i) => {
-        if (i !== index) card.classList.remove('expanded');
+    const formContainer = document.createElement('div');
+    formContainer.innerHTML = formHtml;
+    document.body.appendChild(formContainer);
+
+    const form = document.getElementById("userRequestForm");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const number = form.usernumber.value.trim();
+        const name = form.username.value.trim();
+        sendDocumentsToWhatsapp(serviceName, number, name);
+        closeRequestForm();
     });
-    const currentCard = document.getElementById(`service-${index}`);
-    currentCard.classList.toggle('expanded');
-    lucide.createIcons();
 }
 
-// ✅ Updated to store flag when user clicks apply
-function handleServiceRequest(serviceName) {
-    const whatsappNumber = "919898329056";
+function closeRequestForm() {
+    const overlay = document.getElementById("form-overlay");
+    if (overlay) overlay.remove();
+}
 
-    localStorage.setItem('enteredFromApp', 'true'); // ✅ FLAG STORED
-
+function sendDocumentsToWhatsapp(serviceName, whatsappNumber, username = "") {
     const matchingKey = Object.keys(documentRequirements).find(key => key.includes(serviceName)) || serviceName;
     let documents = documentRequirements[matchingKey];
 
@@ -209,24 +134,24 @@ function handleServiceRequest(serviceName) {
         documents = ["દસ્તાવેજોની માહિતી ઉપલબ્ધ નથી."];
     }
 
-    const message = `📌 *${serviceName}* માટે અરજી કરવી છે.\n\n📝 જરૂરી દસ્તાવેજો:\n${documents.map((doc, i) => `${i + 1}. ${doc}`).join('\n')}\n\n📍Pragalbh Associates\n📞 9898329056`;
+    const message = `📌 *${serviceName}* માટે અરજી કરવી છે.
+👤 નામ: ${username}
+📱 વોટ્સએપ નંબર: ${whatsappNumber}
 
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+📝 જરૂરી દસ્તાવેજો:
+${documents.map((doc, i) => `${i + 1}. ${doc}`).join('\n')}
+\n📍Pragalbh Associates\n📞 9898329056`;
+
+    const url = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
 
-function submitContactForm(event) {
-    event.preventDefault();
-    alert('તમારો સંદેશ મોકલાયો છે! અમે જલ્દીથી સંપર્ક કરીશું.');
-    event.target.reset();
+// Replace original handleServiceRequest
+function handleServiceRequest(serviceName) {
+    showRequestForm(serviceName);
 }
 
-window.addEventListener('hashchange', function () {
-    const hash = window.location.hash.substring(1);
-    showPage(hash || 'home');
-});
+// keep rest same below...
+// (no changes needed in rendering or nav setup logic)
 
-window.addEventListener('load', function () {
-    const hash = window.location.hash.substring(1);
-    showPage(hash || 'home');
-});
+// You can optionally move styles for popup form into your CSS
