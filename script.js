@@ -1,4 +1,4 @@
-original js code
+
 
 // Global variables
 let currentSlideIndex = 0;
