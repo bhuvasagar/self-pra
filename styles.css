@@ -93,6 +93,26 @@ body {
     transition: 0.3s;
 }
 
+.logout-btn {
+  background-color: #e53e3e;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #c53030;
+  transform: scale(1.05);
+}
+
 /* Pages */
 .page {
     display: none;
