@@ -166,9 +166,15 @@ function submitForm() {
 
 // ✅ CLOSE MODAL FUNCTION
 function closeFormModal() {
-    document.getElementById("whatsappFormModal").style.display = "none";
-}
+    const modal = document.getElementById("whatsappFormModal");
 
+    // Hide the modal
+    modal.style.display = "none";
+
+    // Reset form fields
+    document.getElementById("userName").value = "";
+    document.getElementById("userPhone").value = "";
+}
 // ✅ OPTIONAL: CLOSE MODAL IF CLICKED OUTSIDE
 window.addEventListener("click", function (event) {
     const modal = document.getElementById("whatsappFormModal");
