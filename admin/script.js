@@ -169,6 +169,7 @@ function closeFormModal() {
     document.getElementById("whatsappFormModal").style.display = "none";
 }
 
+
 // ✅ OPTIONAL: CLOSE MODAL IF CLICKED OUTSIDE
 window.addEventListener("click", function (event) {
     const modal = document.getElementById("whatsappFormModal");
