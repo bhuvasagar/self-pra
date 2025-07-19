@@ -150,21 +150,34 @@ function submitForm() {
         message += `\n(દસ્તાવેજોની સૂચિ ઉપલબ્ધ નથી)\n`;
     }
 
-    // Add business footer
     message += `\n📞 Pragalbh Associates\nમોબાઇલ: 9898329056`;
 
     const encoded = encodeURIComponent(message);
     const waLink = `https://wa.me/91${cleanPhone}?text=${encoded}`;
 
     window.open(waLink, "_blank");
+
+    document.getElementById("whatsappFormModal").style.display = "none";
+
+    // Clear inputs after submit
+    document.getElementById("userName").value = "";
+    document.getElementById("userPhone").value = "";
+}
+
+// ✅ CLOSE MODAL FUNCTION
+function closeFormModal() {
     document.getElementById("whatsappFormModal").style.display = "none";
 }
 
+// ✅ OPTIONAL: CLOSE MODAL IF CLICKED OUTSIDE
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("whatsappFormModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
 
-function closeFormModal() {
-    document.getElementById("whatsappFormModal").style.display = "none";
-}
-
+// ✅ RENDER SERVICES TO HOME
 function renderHomeServices() {
     const container = document.getElementById("home-services-grid");
     servicesData.forEach(service => {
@@ -208,6 +221,7 @@ function renderHomeServices() {
     });
 }
 
+// ✅ INIT LOAD
 document.addEventListener("DOMContentLoaded", function () {
     renderHomeServices();
 });
