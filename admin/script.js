@@ -161,8 +161,9 @@ function submitForm() {
 }
 
 
-
-
+function closeFormModal() {
+    document.getElementById("whatsappFormModal").style.display = "none";
+}
 
 function renderHomeServices() {
     const container = document.getElementById("home-services-grid");
