@@ -131,8 +131,8 @@ const servicesData = [
             { name: "પાસપોર્ટ સેવાઓ", nameEn: "Passport Services", description: "પાસપોર્ટ અરજી અને સેવાઓ" },
             { name: "વોટર આઈડી", nameEn: "Voter ID", description: "મતદાર ઓળખ કાર્ડ સેવાઓ" },
             { name: "ઇ -શ્રમ કાર્ડ", nameEn: "E-shram card", description: "મતદાર ઓળખ કાર્ડ સેવાઓ" },
-            { name: "ઉદ્યમ આધાર", nameEn: "udyam aadhar", description: "ઉદ્યમ આધાર માટેના પરાવા ની યાદી" },
-	    { name: "સ્કોલરશીપ ફોર્મ", nameEn: "udyam aadhar", description: "સ્કોલરશીપ ફોર્મ ભરવા માટેના પરાવા ની યાદી" },
+            { name: "ઉદ્યમ આધાર", nameEn: "udyam aadhar", description: "ઉદ્યમ આધાર માટેના પુરાવા ની યાદી" },
+	    { name: "સ્કોલરશીપ ફોર્મ", nameEn: "Scholarship Forms", description: "સ્કોલરશીપ ફોર્મ ભરવા માટેના પુરાવા ની યાદી" },
         ]
     },
 
