@@ -17,24 +17,6 @@
     --white: #ffffff;
 }
 
- .btn-admin {
-      display: inline-block;
-      padding: 10px 20px;
-      background: linear-gradient(135deg, #4CAF50, #2E7D32);
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .btn-admin:hover {
-      background: linear-gradient(135deg, #66BB6A, #388E3C);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-
 body {
     font-family: 'Noto Sans Gujarati', 'Inter', sans-serif;
     line-height: 1.6;
