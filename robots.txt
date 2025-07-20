@@ -1,0 +1,7 @@
+# robots.txt for https://www.pragalbh.online
+
+User-agent: *
+Disallow: /admin.html
+Allow: /
+
+Sitemap: https://www.pragalbh.online/sitemap.xml
