@@ -5,13 +5,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Praglbh Association - Government Document Services</title>
+  <meta name="description" content="Get fast, reliable Government Document Services with Pragalbh Associates. Trusted for PAN, Aadhar, income certificate & more.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Pragalbh Association - Govt Document Services" />
+  <meta property="og:description" content="Trusted for all government documentation including PAN, Aadhar, and more." />
+  <meta property="og:image" content="https://www.pragalbh.online/images/Pragalbh-logo.jpg" />
+  <meta property="og:url" content="https://www.pragalbh.online/" />
+  <link rel="canonical" href="https://www.pragalbh.online/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Pragalbh Associates",
+  "description": "Government document services for PAN, Aadhar, income certificate, and more.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jetpur",
+    "addressRegion": "Gujarat",
+    "postalCode": "360370",
+    "addressCountry": "IN"
+  },
+  "url": "https://www.pragalbh.online",
+  "logo": "https://www.pragalbh.online/images/Pragalbh-logo.jpg"
+}
+  </script>
+
   <link rel="website icon" type="png" href="Pragalbh-logo.png" style="border-radius: 19px;">
   <link rel="stylesheet" href="styles.css" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 
 <body>
   <!-- Navigation -->
@@ -26,6 +57,7 @@
         <li><a href="service.html" onclick="showPage('services')">Services</a></li>
         <li><a href="contact.html" onclick="showPage('contact')">Contact</a></li>
         <li><a href="#" onclick="openWhatsApp()">Apply Now</a></li>
+        <li><a href="./admin.html">Admin</a></li>
       </ul>
       <div class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
@@ -89,7 +121,7 @@
     <div class="container">
       <div class="about-content">
         <div class="about-text">
-          <h2 class="section-title">About Praglbh Associates</h2>
+          <h2 class="section-title">About Pragalbh Associates – Govt Document Experts in Jetpur</h2>
           <div class="about-description">
             <p>Praglbh Association is a trusted organization that helps citizens with their government
               documents and various online form submissions.</p>
@@ -110,15 +142,15 @@
               <div class="stat-label">Years Experience</div>
             </div>
             <div class="about-stat-card">
-              <div class="stat-icon">✉️</div>
+              <div class="stat-icon">✉</div>
               <div class="stat-number">WhatsApp Support</div>
               <div class="stat-label">Always here to help</div>
             </div>
           </div>
         </div>
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&h=400"
-            alt="Team working" class="about-img">
+          <img src="Pragalbh-logo-removebg-preview (2).png"
+            alt="Pragalbh Associates Government Document Services Jetpur" class="about-img">
 
         </div>
       </div>
@@ -224,8 +256,8 @@
     </form>
   </div>
 
-  <!-- Floating Button -->
-<div class="whatsapp-button" onclick="toggleChatbot()">
+  <!-- WhatsApp Floating Button -->
+  <div class="whatsapp-button" onclick="toggleChatbot()">
   <i data-lucide="message-circle"></i>
 </div>
 
@@ -235,8 +267,7 @@
   <div class="chat-body" id="chatBody"></div>
   <input type="text" id="chatInput" placeholder="Type a number..." onkeydown="handleInput(event)">
 </div>
-
-
+  
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
