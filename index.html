@@ -8,6 +8,7 @@
   <link rel="website icon" type="png" href="Pragalbh-logo.png" style="border-radius: 19px;">
   <link rel="stylesheet" href="styles.css" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -226,10 +227,17 @@
   </div>
 
   <!-- WhatsApp Floating Button -->
-  <div class="whatsapp-button" onclick="openWhatsApp()">
-    <i data-lucide="message-circle"></i>
-  </div>
+  <div class="whatsapp-button" onclick="toggleChatbot()">
+  <i data-lucide="message-circle"></i>
+</div>
 
+<!-- Chatbot Box -->
+<div class="chatbot-box" id="chatbotBox">
+  <div class="chat-header">🤖 Praglbh Chatbot</div>
+  <div class="chat-body" id="chatBody"></div>
+  <input type="text" id="chatInput" placeholder="Type a number..." onkeydown="handleInput(event)">
+</div>
+  
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
