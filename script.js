@@ -1,10 +1,10 @@
 
-
 // Global variables
 let currentSlideIndex = 0;
 let slideInterval;
 let userRegistered = false;
 
+lucide.createIcons();
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     initializeSlider();
@@ -131,8 +131,7 @@ const servicesData = [
             { name: "પાસપોર્ટ સેવાઓ", nameEn: "Passport Services", description: "પાસપોર્ટ અરજી અને સેવાઓ" },
             { name: "વોટર આઈડી", nameEn: "Voter ID", description: "મતદાર ઓળખ કાર્ડ સેવાઓ" },
             { name: "ઇ -શ્રમ કાર્ડ", nameEn: "E-shram card", description: "મતદાર ઓળખ કાર્ડ સેવાઓ" },
-            { name: "ઉદ્યમ આધાર", nameEn: "udyam aadhar", description: "ઉદ્યમ આધાર માટેના પુરાવા ની યાદી" },
-	    { name: "સ્કોલરશીપ ફોર્મ", nameEn: "Scholarship Forms", description: "સ્કોલરશીપ ફોર્મ ભરવા માટેના પુરાવા ની યાદી" },
+            { name: "ઉદ્યમ આધાર", nameEn: "udyam aadhar", description: "ઉદ્યમ આધાર માટના પરાવા ની યાદી" },
         ]
     },
 
@@ -256,7 +255,7 @@ const documentRequirements = {
 	    "બેંક પાસબૂક કન્યાની",
 	    "મેરેજ સર્ટી",
 	    "રેશનકાર્ડ કન્યાના નામ વાળુ (KYC ફરજીયાત)",
-       "નોંધ :- લગ્ન ના ૨ વર્ષ ની સમય મર્યાદામાં ફોર્મ ભરવાનું રહેશે.",
+        "નોંધ :- લગ્ન ના ૨ વર્ષ ની સમય મર્યાદામાં ફોર્મ ભરવાનું રહેશે.",
     ],
 
     "મેરેજ સર્ટીફીકેટ માટેના પુરાવા ની યાદી": [
@@ -440,21 +439,7 @@ const documentRequirements = {
 		"ફોટા – ૧",
 		"ઘરના સભ્યનું ચુંટણી કાર્ડ ",
 		"અરજદારના સ્કુલ લિવિંગ સર્ટી",
-    ],
-	"સ્કોલરશીપ ફોર્મ": [
-		"વિદ્યાર્થીનું આધાર કાર્ડ",
-		"વિદ્યાર્થીની બેંક પાસબુક",
-		"અભ્યાસની તમામ માર્કશીટ",
-		"વિદ્યાર્થીનો જ્ઞાતિનો દાખલો",
-		"સ્કુલ લીવીંગ સર્ટીફીકેટ",
-		"સ્કુલ/કોલેજ બોનાફાઈડ સર્ટીફીકેટ",
-		"વાલીનો આવકનો દાખલો",
-		"વિદ્યાર્થીનો ફોટો",
-		"હોસ્ટેલફીની પહોચ (લાગુ પડતું હોય તો)",
-		"સ્કુલ-કોલેજ ફી ભર્યાની પહોચ",
-		"ગેપ સર્ટીફીકેટ 1 વર્ષથી વધુ ગેપ હોય તો",
-   ],
-
+    ]
 };
 
 /* new js add* bot */
@@ -752,97 +737,107 @@ const serviceDocs = {
 };
 
 const serviceNames = Object.keys(serviceDocs);
-let hasGreeted = false;
+  let hasGreeted = false;
 
-function toggleChatbot() {
-  const bot = document.getElementById("chatbotBox");
-  if (bot.style.display === "none" || bot.style.display === "") {
-    bot.style.display = "flex";
-    document.getElementById("chatBody").innerHTML = "";
-    hasGreeted = false;
-    setTimeout(() => showBot("Hi there! How can I help you today? 🤖"), 300);
-  } else {
-    bot.style.display = "none";
-  }
-}
-
-function showBot(msg) {
-  const chat = document.getElementById("chatBody");
-  chat.innerHTML += `<div style="text-align:left;margin:5px;"><b>Bot:</b> ${msg}</div>`;
-  chat.scrollTop = chat.scrollHeight;
-}
-
-function showUser(msg) {
-  const chat = document.getElementById("chatBody");
-  chat.innerHTML += `<div style="text-align:right;margin:5px;"><b>You:</b> ${msg}</div>`;
-  chat.scrollTop = chat.scrollHeight;
-}
-
-function handleInput(e) {
-  if (e.key === "Enter") {
-    const msg = e.target.value.trim();
-    if (msg) {
-      showUser(msg);
-      e.target.value = "";
-
-      if (!hasGreeted) {
-        hasGreeted = true;
-        showBot("📋 Please select a service:");
-        listServices();
-        return;
-      }
-
-      handleService(parseInt(msg));
+  function toggleChatbot() {
+    const bot = document.getElementById("chatbotBox");
+    if (bot.style.display === "none" || bot.style.display === "") {
+      bot.style.display = "flex";
+      document.getElementById("chatBody").innerHTML = "";
+      hasGreeted = false;
+      setTimeout(() => showBot("Hi there! How can I help you today? 🤖"), 300);
+    } else {
+      bot.style.display = "none";
     }
   }
-}
 
-function listServices() {
-  const chat = document.getElementById("chatBody");
-  serviceNames.forEach((service, i) => {
-    const btn = document.createElement("button");
-    btn.className = "chat-btn";
-    btn.innerText = `${i + 1}. ${service}`;
-    btn.onclick = () => handleService(i + 1);
-    chat.appendChild(btn);
-  });
-}
-
-function handleService(index) {
-  if (isNaN(index) || index < 1 || index > serviceNames.length) {
-    showBot("⚠️ Please enter a valid service number.");
-    return;
+  function showBot(msg) {
+    const chat = document.getElementById("chatBody");
+    chat.innerHTML += `<div style="text-align:left;margin:5px;"><b>Bot:</b> ${msg}</div>`;
+    chat.scrollTop = chat.scrollHeight;
   }
 
-  const selected = serviceNames[index - 1];
-  const docs = serviceDocs[selected];
+  function showUser(msg) {
+    const chat = document.getElementById("chatBody");
+    chat.innerHTML += `<div style="text-align:right;margin:5px;"><b>You:</b> ${msg}</div>`;
+    chat.scrollTop = chat.scrollHeight;
+  }
 
-  // Create a plain-text message for WhatsApp
-  const plainDocList = docs.map((d, i) => `${i + 1}. ${d}`).join("\n");
-  const message = `📋 ${selected} માટે જરૂરી ડોક્યુમેન્ટ્સ:\n\n${plainDocList}`;
+  function handleInput(e) {
+    if (e.key === "Enter") {
+      const msg = e.target.value.trim();
+      if (msg) {
+        showUser(msg);
+        e.target.value = "";
 
-  // Create bot message with HTML line breaks
-  const botDocListHTML = docs.map((d, i) => `${i + 1}. ${d}`).join("<br>");
-  showBot(`✅ You selected: <b>${selected}</b><br><br>📎 Required documents:<br>${botDocListHTML}`);
+        if (!hasGreeted) {
+          hasGreeted = true;
+          showBot("📋 Please select a service:");
+          listServices();
+          return;
+        }
 
-  // Generate WhatsApp link
-  const phone = "919898329056"; // 🔁 Replace with your own number if needed
-  const waURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        handleService(parseInt(msg));
+      }
+    }
+  }
 
-  // Create clickable WhatsApp message link
-  const chat = document.getElementById("chatBody");
-  const linkDiv = document.createElement("div");
-  linkDiv.style = "text-align:left; margin:8px 0;";
-  linkDiv.innerHTML = `
-    <b>Bot:</b> 
-    <a href="${waURL}" target="_blank" 
-       style="color:green; font-weight:bold; text-decoration:none;">
-       📤 Click here to get this list on WhatsApp
-    </a>
-  `;
-  chat.appendChild(linkDiv);
-  chat.scrollTop = chat.scrollHeight;
-}
+  function listServices() {
+    const chat = document.getElementById("chatBody");
+    serviceNames.forEach((service, i) => {
+      const btn = document.createElement("button");
+      btn.className = "chat-btn";
+      btn.innerText = `${i + 1}. ${service}`;
+      btn.onclick = () => handleService(i + 1);
+      chat.appendChild(btn);
+    });
+  }
+
+  function handleService(index) {
+    if (isNaN(index) || index < 1 || index > serviceNames.length) {
+      showBot("⚠️ Please enter a valid service number.");
+      return;
+    }
+
+    const selected = serviceNames[index - 1];
+    const docs = serviceDocs[selected];
+
+    const plainDocList = docs.map((d, i) => `${i + 1}. ${d}`).join("\n");
+    const message = `📋 ${selected} માટે જરૂરી ડોક્યુમેન્ટ્સ:\n\n${plainDocList}`;
+
+    const botDocListHTML = docs.map((d, i) => `${i + 1}. ${d}`).join("<br>");
+    showBot(`✅ You selected: <b>${selected}</b><br><br>📎 Required documents:<br>${botDocListHTML}`);
+
+    const phone = "919898329056";
+    const waURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    const chat = document.getElementById("chatBody");
+    const linkDiv = document.createElement("div");
+    linkDiv.style = "text-align:left; margin:8px 0;";
+    linkDiv.innerHTML = `
+      <b>Bot:</b> 
+      <a href="${waURL}" target="_blank" 
+         style="color:green; font-weight:bold; text-decoration:none;">
+         📤 Click here to get this list on WhatsApp
+      </a>
+    `;
+    chat.appendChild(linkDiv);
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  // 🔐 Close bot when clicking outside
+  document.addEventListener("click", function (event) {
+    const chatbot = document.getElementById("chatbotBox");
+    const button = document.querySelector(".whatsapp-button");
+    if (
+      chatbot.style.display === "flex" &&
+      !chatbot.contains(event.target) &&
+      !button.contains(event.target)
+    ) {
+      chatbot.style.display = "none";
+    }
+  });
+
 
 /* next line */
 document.addEventListener('DOMContentLoaded', function () {
@@ -976,3 +971,8 @@ window.addEventListener('load', function () {
     const hash = window.location.hash.substring(1);
     showPage(hash || 'home');
 });
+
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get("admin") === "true") {
+  window.location.href = "/admin.html";
+}
