@@ -108,6 +108,7 @@ const servicesData = [
             { name: "નોન ક્રિમીલેયર સર્ટી", nameEn: "Non-creamy layer Certificate", description: "નોન ક્રિમીલેયર સર્ટી માટે" },
             { name: "સીનીયર સીટીઝન પ્રમાણપત્ર ", nameEn: "Senior Citizen Certificate", description: "સીનીયર સીટીઝન પ્રમાણપત્ર માટે" },
             { name: "વિચરતી-વિમુક્ત જાતિ દાખલો ", nameEn: "NT-DNT Certificate", description: "વિચરતી-વિમુક્ત જાતિ દાખલો માટે" },
+	    { name: "લગ્ન નોંધણી ", nameEn: "Marriage Certificate", description: "લગ્ન નોંધણી માટે" },
         ]
     },
     {
@@ -259,7 +260,7 @@ const documentRequirements = {
         "નોંધ :- લગ્ન ના ૨ વર્ષ ની સમય મર્યાદામાં ફોર્મ ભરવાનું રહેશે.",
     ],
 
-    "મેરેજ સર્ટીફીકેટ માટેના પુરાવા ની યાદી": [
+    "લગ્ન નોંધણી માટેના પુરાવા ની યાદી": [
 
 	    "લીવીંગ સર્ટી  (વર તથા કન્યા ના)",
 	    "આધાર કાર્ડ (વર તથા કન્યા ના)",
@@ -991,3 +992,4 @@ const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get("admin") === "true") {
   window.location.href = "/admin.html";
 }
+
