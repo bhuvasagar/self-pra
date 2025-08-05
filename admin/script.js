@@ -22,7 +22,7 @@ const servicesData = [
             { name: "નોન ક્રિમીલેયર સર્ટી", nameEn: "Non-creamy layer Certificate", description: "નોન ક્રિમીલેયર સર્ટી માટે" },
             { name: "સીનીયર સીટીઝન પ્રમાણપત્ર ", nameEn: "Senior Citizen Certificate", description: "સીનીયર સીટીઝન પ્રમાણપત્ર માટે" },
             { name: "વિચરતી-વિમુક્ત જાતિ દાખલો ", nameEn: "NT-DNT Certificate", description: "વિચરતી-વિમુક્ત જાતિ દાખલો માટે" },
-            { name: "લગ્ન નોંધણો ", nameEn: "Marriage Certificate", description: "લગ્ન નોંધણો માટે" }
+            { name: "લગ્ન નોંધણો ", nameEn: "Marriage Certificate", description: "લગ્ન નોંધણો માટેના પુરાવા ની યાદી" }
         ]
     },
     {
