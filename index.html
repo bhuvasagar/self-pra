@@ -14,6 +14,14 @@
   <meta property="og:image" content="Pragalbh-logo.png" />
   <meta property="og:url" content="https://www.pragalbh.online/" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <script>
+  // If URL contains 'admin', redirect to admin.html
+  if (window.location.href.includes("admin")) {
+    window.location.href = "admin.html";
+  }
+</script>
+
   
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -57,7 +65,7 @@
         <li><a href="service.html" onclick="showPage('services')">Services</a></li>
         <li><a href="contact.html" onclick="showPage('contact')">Contact</a></li>
         <li><a href="#" onclick="openWhatsApp()">Apply Now</a></li>
-        <li><a href="./admin.html">Admin</a></li>
+        <!-- <li><a href="./admin.html">Admin</a></li> -->
       </ul>
       <div class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
@@ -269,39 +277,57 @@
 </div>
   
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-section">
-        <h2 style="padding-bottom: 1.2rem;">Pragalbh Associates</h2>
-        <ul>
-          <p><i class="fa-solid fa-location-dot"></i> OFFICE NO.6 <span> OPP TALUKA SEVA SADAN</span> <br> JUNAGADH ROAD, JETPUR 360370</p>
-
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>સંપર્ક કરો</h4>
-        <ul>
-          <li><a href="tel:+91 9898329056"></a> મો.+91 9898329056</li>
-          <li> <a href="mailto:pragalbhxerox@gmail.com"></a>
-            pragalbhxerox@gmail.com</li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Follow Us</h4>
-        <ul class="social-icons">
-          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
-          <li><a href="#"><i class="fab fa-google"></i></a></li>
-        </ul>
-      </div>
+ <footer class="footer">
+  <div class="container footer-content">
+    <!-- Company Info -->
+    <div class="footer-section">
+      <h2 style="padding-bottom: 1.2rem;">Pragalbh Associates</h2>
+      <ul>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> OFFICE NO.6 
+          <span> OPP TALUKA SEVA SADAN</span> <br> 
+          JUNAGADH ROAD, JETPUR 360370
+        </p>
+      </ul>
     </div>
-    <div class="footer-bottom">© 2025 Pragalbh Associates Designed By <span class="copyright-year"></span> <strong><a href="https://creonextech.pythonanywhere.com/"
-                            target="_blank" style="color: aliceblue;">Creonex Tech</a></strong>. All Rights
-                    Reserved.
-                    Various trademarks held by their respective owners. </div>
-    
-  </footer>
+
+    <!-- Contact -->
+    <div class="footer-section">
+      <h4>સંપર્ક કરો</h4>
+      <ul>
+        <li><a href="tel:+919898329056">મો. +91 9898329056</a></li>
+        <li><a href="mailto:pragalbhxerox@gmail.com">pragalbhxerox@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html" onclick="showPage('home')">Home</a></li>
+        <li><a href="service.html" onclick="showPage('services')">Services</a></li>
+        <li><a href="contact.html" onclick="showPage('contact')">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <ul class="social-icons">
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+        <li><a href="#"><i class="fab fa-google"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Pragalbh Associates. Designed By <span class="copyright-year"></span>. 
+    All Rights Reserved.
+  </div>
+</footer>
+
 
   <!-- Script -->
   <script src="script.js"></script>
