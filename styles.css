@@ -790,7 +790,7 @@ body {
     border-radius: 12px;
     margin-bottom: 1.5rem;
     transition: transform 0.3s;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .service-card:hover {
@@ -811,11 +811,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .service-info {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 1rem;
 }
 
@@ -846,25 +847,26 @@ body {
     display: none;
 }
 
-.service-card.expanded .service-content {
+/* .service-card.expanded .service-content {
     display: block;
-}
+    
+} */
 
-.sub-service-item {
+/* .sub-service-item {
     border-top: 1px solid var(--gray-100);
     padding: 0.8rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
-.sub-service-info h4 {
+/* .sub-service-info h4 {
     margin: 0;
     font-size: 1.1rem;
     color: var(--primary-blue);
-}
+} */
 
-.sub-service-info p {
+/* .sub-service-info p {
     margin: 0;
     font-size: 0.9rem;
     color: var(--gray-600);
@@ -873,7 +875,7 @@ body {
 .sub-service-info span {
     font-size: 0.8rem;
     color: var(--gray-600);
-}
+} */
 
 .apply-button {
     background-color: var(--primary-blue);
@@ -1005,6 +1007,34 @@ body {
     gap: 2rem;
     margin-bottom: 2rem;
 }
+/* new footer css code */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 6px 0;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #ffcc00;
+}
+
+/* end*/
 
 .footer-section h4 {
     margin-bottom: 1.5rem;
@@ -1019,6 +1049,7 @@ body {
     margin-bottom: 0.5rem;
     color: #d1d5db;
 }
+
 
 .footer-bottom {
     text-align: center;
@@ -1132,3 +1163,47 @@ body {
 
 
 
+
+
+
+/* ✅ Updated Sub-services Horizontal Grid Layout */
+.service-card.expanded .service-content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+    justify-content: center;
+}
+
+.sub-service-item {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 📱 Tablet View */
+@media (max-width: 998px) {
+    .service-card.expanded .service-content {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+}
+
+/* 📱 Mobile View */
+@media (max-width: 768px) {
+    .service-card.expanded .service-content {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
+}
+
+/* 📱 Small Mobile */
+@media (max-width: 480px) {
+    .service-card.expanded .service-content {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+}
